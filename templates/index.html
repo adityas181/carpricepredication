@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+    <title>Car Prediction</title>
+     <link rel = "icon" href =  
+"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTr0WDHUP8wL1FpaXxW3rHcBu7T6x_BUgyxKw&usqp=CAU" 
+        type = "image/x-icon"> 
+        
+        
+        
+            <style>
+        body {
+            background-color: green;
+            text-align: center;
+            padding: 0px;
+            background-image: url("https://miro.medium.com/max/4512/1*6c-JT83ch7hiHuJQ5A3gSg.jpeg");
+}
+        
+      
+      .h1 {
+              text-align:center  
+               font-family: "Times New Roman", Times, serif;
+                
+      }  
+      
+      
+      
+      .div1{
+      border-radius: 25px;
+         background:#7f7f7f;
+         background:rgba(255,255,255,0.9);
+         width: 347px;
+         height: 1100px;  
+         margin-left: 300px;
+          margin-top: 100px;
+          border: 1px white;
+          padding-left: 200px;
+          padding-right: 200px;
+          padding-top: 50px;
+          
+      }
+      
+    
+        #fuel {
+        width: 80px;
+            height: 37px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+            transition-duration: 0.4s;
+            border: 2px solid #800000
+            transition-duration: 0.4s;
+            border: 2px solid #800080;
+        }
+        
+        #fuel:hover {
+            background-color: #800080; 
+               color: white;
+        }
+        
+        #research {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+            transition-duration: 0.4s;
+            border: 2px solid #800000
+            transition-duration: 0.4s;
+            border: 2px solid #800080;
+        }
+        
+        #research:hover {
+           background-color: #800080; 
+               color: white;
+        }
+        
+        #resea {
+            width: 85px;
+            height: 37px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+            transition-duration: 0.4s;
+            border: 2px solid #800080;
+        }
+        
+        #resea:hover {
+            background-color: #800080; 
+               color: white;
+        }
+        
+        #sub {
+            width: 140px;
+            height: 50px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 18px;
+            transition-duration: 0.4s;
+            border: 2px solid #800080;
+             margin-top: 50px;
+        }
+        
+        #sub:hover {
+           background-color: #800080; 
+               color: white;
+        }
+        
+        #first {
+         width: 140px;
+            height: 50px;
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+            transition-duration: 0.4s;
+            border: 2px solid #800080;
+        }
+        
+        #second {
+         width: 140px;
+            height: 50px;
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+            transition-duration: 0.4s;
+            border: 2px solid #800080;
+        }
+        
+        #third { width: 140px;
+            height: 50px;
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+            transition-duration: 0.4s;
+            border: 2px solid #800080;
+        }
+        
+        #fourth {
+         width: 140px;
+            height: 50px;
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+            transition-duration: 0.4s;
+            border: 2px solid #800080;
+         }   
+     
+
+      #h3 {
+           background-color: black;
+           color: white;
+          text-align: center;   
+      }
+      
+
+  
+    </style>     
+        
+</head>
+
+<body>
+
+
+
+
+<div5 id"pred">
+
+
+<h1 style="background-color: #8B008B; color: white; width:1340px; padding-top:15px;padding-bottom:15px;margin-left:-5px;margin-top:-8px;">Car Price Prediction</h1>
+
+</div5>
+
+<div class="div1">
+    <div style="color:#8B008B">
+        <form action="{{ url_for('predict')}}" method="post">
+           
+            <h3>Year of Buying Car</h3>
+            <input  placeholder="eg. 2015" id="first" name="Year" type="number ">
+            <h3>What is the Showroom Price?(In lakhs)</h3><br><input placeholder="eg. 3 or 2.5" id="second" name="Present_Price" required="required">
+            <h3>How Many Kilometers Drived?</h3><input  placeholder="eg. 5000" id="third" name="Kms_Driven" required="required">
+            <h3>How much owners previously had the car  (0 or 1 or 2) ?</h3><br><input  placeholder="eg. 1" id="fourth" name="Owner" required="required">
+            <h3>What Is the Fuel type?</h3><br><select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+            <h3>Are you A Dealer or Individual</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <h3>Transmission type</h3><br><select name="Transmission_Mannual" id="research" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+
+        </form>
+
+   <div id="pre"
+
+        <br><br><h1>{{ prediction_text }}<h1>
+        
+        <br><br><br>
+        
+   
+   
+    </div>
+  
+</div1>
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#8B008B ;
+  color: white;
+  text-align: center;
+}
+</style>
+
+<div class="footer">
+  <p>@ copyright 2020  Aditya Pratap Singh</p>
+</div>
+ 
+</body>
+
+</html>
